@@ -1,4 +1,4 @@
-/* Copyright (c) 2017, The Linux Foundation. All rights reserved.
+/* Copyright (c) 2017-2020, The Linux Foundation. All rights reserved.
  * Copyright (C) 2020 XiaoMi, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
@@ -486,6 +486,7 @@ int cam_irq_controller_unsubscribe_irq(void *irq_controller,
 	}
 
 	if (found) {
+		priority = evt_handler->priority;
 		for (i = 0; i < controller->num_registers; i++) {
 			controller->irq_register_arr[i].
 				top_half_enable_mask[evt_handler->priority] &=

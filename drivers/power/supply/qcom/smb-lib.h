@@ -413,6 +413,7 @@ struct smb_charger {
 	bool                    check_vbus_once;
 	bool                    unstandard_hvdcp;
 	bool			support_hw_scpcharger;
+	bool ufp_only_mode;
 
 	/* workaround flag */
 	u32			wa_flags;
@@ -628,8 +629,12 @@ int smblib_set_prop_pr_swap_in_progress(struct smb_charger *chg,
 int smblib_stat_sw_override_cfg(struct smb_charger *chg, bool override);
 void smblib_usb_typec_change(struct smb_charger *chg);
 int smblib_toggle_stat(struct smb_charger *chg, int reset);
+<<<<<<< HEAD
 int smblib_set_prop_rerun_apsd(struct smb_charger *chg,
 				const union power_supply_propval *val);
+=======
+int smblib_force_ufp(struct smb_charger *chg);
+>>>>>>> edcf2b83646547b16b0a0e5d6e2bd07e1d1549fa
 
 int smblib_init(struct smb_charger *chg);
 int smblib_deinit(struct smb_charger *chg);
